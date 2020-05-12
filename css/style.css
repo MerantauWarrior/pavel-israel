@@ -1,0 +1,150 @@
+@font-face {
+    font-family: 'David';
+    src: url('../fonts/david.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/*General*/
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body{
+    direction: rtl;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+a, button {
+    outline: none;
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    transition: all 0.25s;
+}
+h1,h2{
+    margin: 0;
+    text-align: center;
+}
+input, textarea, button, select {
+    outline: none;
+    border: none;
+    padding: 0;
+}
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+img {
+    display: block;
+    max-width: 100%;
+}
+input[type="checkbox"],
+input[type="radio"]{
+    display: none;
+}
+/*STYLE*/
+.logo{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.logo--header{
+    max-width: 200px;
+}
+.logo--footer{
+    max-width: 150px;
+}
+.content{
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'David',sans-serif;
+}
+ol li{
+    margin: 10px 0;
+}
+ol {
+    counter-reset: item
+}
+li {
+    position: relative;
+    display: block;
+    padding-right: 20px;
+}
+li ol li{
+    padding-right: 25px;
+}
+li:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: counters(item, "") ". ";
+    counter-increment: item
+}
+li ol li:before{
+    content: counters(item, ".");
+    counter-increment: item
+}
+a{
+    color: #000;
+    border-bottom: 1px solid #000;
+}
+.inp{
+    width: 100%;
+    max-width: 100%;
+    border-bottom: 1px solid #000;
+}
+.sign-name{
+    width: 150px;
+    max-width: 150px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+.sign-name__label{
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+}
+.df-nw{
+    display: flex;
+    margin-top: 30px;
+}
+.df-nw__solo{
+    margin-left: 10px;
+}
+h2{
+    margin: 30px 0;
+    font-size: 19px;
+}
+h2 span{
+    display: inline-block;
+    border-bottom: 2px solid #000;
+}
+.df-sa{
+    display: flex;
+    justify-content:space-around;
+    margin-top: 30px;
+}
+.inp-top{
+    display: flex;
+    justify-content: center;
+}
+.inp--inp-top{
+    max-width: 150px;
+}
+.wrapper{
+    padding: 30px 0;
+}
