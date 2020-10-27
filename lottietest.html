@@ -60,13 +60,14 @@
   })
   var curFrame = 0;
   document.getElementById('playBtn').onclick = function () {
-    // animLottie.play(); play once on click
+    animLottieSec.play();
     console.log(curFrame);
-    animLottieSec.goToAndPlay(curFrame);
+    // animLottieSec.goToAndPlay(curFrame);
     // animLottieSec.playSegments([curFrame, animLottieSec.getDuration(true)], true);
   }
   document.getElementById('pauseBtn').onclick = function () {
     animLottieSec.pause();
+    // animLottieSec.togglePause(); play/pause toggler
     curFrame = animLottieSec.currentRawFrame;
     console.log(animLottieSec.currentRawFrame);
     console.log(animLottieSec.getDuration(true));
