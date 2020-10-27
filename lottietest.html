@@ -1,0 +1,79 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.3/lottie.js"
+          integrity="sha512-+cOgdFZQcpFOfpIXV1NkF/hHAj9j17SMa+ZQOW1tTFocKYcYPJAThI4PkvpRkHxSeVwWPRkdSAvXn8d25glTrA=="
+          crossorigin="anonymous"></script>
+</head>
+<style>
+  button{
+    width: 100px;
+    height: 50px;
+    margin-right: 50px;
+  }
+</style>
+<body>
+
+<div id="lottieFirst" style="width: 200px;height: 200px;"></div>
+<div id="lottieNew" style="width: 200px;height: 200px;"></div>
+<div id="lottieSec" style="width: 200px;height: 200px;"></div>
+<button id="playBtn">play</button>
+<button id="pauseBtn">pause</button>
+<button id="stopBtn">stop</button>
+
+<script>
+  var animaLottie = lottie.loadAnimation({
+    container: document.getElementById('lottieNew'), // the dom element that will contain the animation
+    renderer: 'svg',
+    loop: true,
+    name: 'globeLottie',
+    autoplay: true,
+    path: '36570-ah-a-ghost.json' // the path to the animation json
+  });
+  var animLottie = lottie.loadAnimation({
+    container: document.getElementById('lottieFirst'), // the dom element that will contain the animation
+    renderer: 'svg',
+    loop: true,
+    name: 'globeLottie',
+    autoplay: false,
+    path: '37056-community-icon.json' // the path to the animation json
+  });
+  document.getElementById('lottieFirst').addEventListener('click', function () {
+    animLottie.play();
+  })
+  var animLottieSec = lottie.loadAnimation({
+    container: document.getElementById('lottieSec'), // the dom element that will contain the animation
+    renderer: 'svg',
+    loop: false,
+    autoplay: false,
+    path: '37065-chatting.json' // the path to the animation json
+  });
+  animLottie.onComplete = function(){
+    console.log("works!");
+  }
+  animLottie.addEventListener('complete', function () {
+    console.log("Also works!");
+  })
+  var curFrame = 0;
+  document.getElementById('playBtn').onclick = function () {
+    // animLottie.play(); play once on click
+    console.log(curFrame);
+    animLottieSec.goToAndPlay(curFrame);
+    // animLottieSec.playSegments([curFrame, animLottieSec.getDuration(true)], true);
+  }
+  document.getElementById('pauseBtn').onclick = function () {
+    animLottieSec.pause();
+    curFrame = animLottieSec.currentRawFrame;
+    console.log(animLottieSec.currentRawFrame);
+    console.log(animLottieSec.getDuration(true));
+  }
+  document.getElementById('stopBtn').onclick = function () {
+    animLottieSec.stop();
+  }
+</script>
+</body>
+</html>
